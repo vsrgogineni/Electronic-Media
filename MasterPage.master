@@ -1,0 +1,55 @@
+<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage" %>
+<%@ Register Src="DefaultUserControl/RihtPanelUserControl.ascx" TagName="RihtPanelUserControl"
+    TagPrefix="uc6" %>
+
+<%@ Register Src="DefaultUserControl/DefaultMapUserControl.ascx" TagName="DefaultMapUserControl"
+    TagPrefix="uc7" %>
+<%@ Register Src="Admin/AdminUserControl/FooterUserControl.ascx" TagName="FooterUserControl"
+    TagPrefix="uc5" %>
+<%@ Register Src="DefaultUserControl/DefaultHeaderUserControl.ascx" TagName="DefaultHeaderUserControl"
+    TagPrefix="uc1" %>
+<%@ Register Src="DefaultUserControl/DefaultMenuUserControl.ascx" TagName="DefaultMenuUserControl"
+    TagPrefix="uc2" %>
+<%@ Register Src="Employee/EmployeeUserControl/LeftPanelWebUserControl.ascx" TagName="LeftPanelWebUserControl"
+    TagPrefix="uc3" %>
+<%@ Register Src="Employee/EmployeeUserControl/RighPaneUserControl.ascx" TagName="RighPaneUserControl"
+    TagPrefix="uc4" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head runat="server">
+    <title>Hospital Management</title>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div>
+        <table width="100%" cellpadding="0" cellspacing="0" topmargin="0" leftmargin="0">
+            <tr>
+                <td colspan="3">
+                    <uc1:DefaultHeaderUserControl ID="DefaultHeaderUserControl1" runat="server" />
+                </td>
+            </tr>
+            <tr>
+                <td colspan="3">
+                    <uc2:DefaultMenuUserControl ID="DefaultMenuUserControl1" runat="server" OnLoad="DefaultMenuUserControl1_Load" />
+                </td>
+            </tr>
+            <tr>
+                <td  >
+                  <div style="height:430px">
+                    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                    </asp:ContentPlaceHolder>
+                    </div> 
+                </td>
+            </tr>
+            <tr>
+                <td colspan="3">
+                    <uc5:FooterUserControl ID="FooterUserControl1" runat="server" />
+                </td>
+            </tr>
+        </table>
+       </div>
+    </form>
+</body>
+</html>
